@@ -16,6 +16,8 @@ var velocityX;
 var velocityY;
 var velocity;
 
+var clicked;
+
 var mySound;
 
 var myCanvas;
@@ -30,6 +32,8 @@ function preload() {
 }
 
 function setup() {
+    clicked = false;
+    
     //put setup code here
     createCanvas(500, 400);
     
@@ -37,9 +41,7 @@ function setup() {
     
     SE = new SoundEngine(mySound);
     
-    if (!mySound.isPlaying()) {
-        mySound.play();
-    }
+    
     
     //weed
     
@@ -48,31 +50,42 @@ function setup() {
 }
 
 function draw() {
-    clear();
-    //background(0, 50, 120);
-    background(0, 0, 0);
     
-    //get input
-    KBD.setCCW(keyIsDown(LEFT_ARROW));
-    KBD.setCW(keyIsDown(RIGHT_ARROW));
-    KBD.setFWD(keyIsDown(UP_ARROW));
-    KBD.setBWD(keyIsDown(DOWN_ARROW));
-    KBD.setPause(keyIsDown(80));
-    KBD.setFire(keyIsDown(32));
-    KBD.setK(keyIsDown(75))
-    
-    
-    
-    
-    
-    
-    GM.update();
-    
-    GM.draw();
-    
-    /*
-    textSize(10);
-    fill(255, 0, 0);
-    textAlign(LEFT);
-    text("Framerate: " + getFrameRate(), 5, 190);*/
+    if (clicked) {
+        if (!mySound.isPlaying()) {
+            mySound.play();
+        }
+
+        clear();
+        //background(0, 50, 120);
+        background(0, 0, 0);
+
+        //get input
+        KBD.setCCW(keyIsDown(LEFT_ARROW));
+        KBD.setCW(keyIsDown(RIGHT_ARROW));
+        KBD.setFWD(keyIsDown(UP_ARROW));
+        KBD.setBWD(keyIsDown(DOWN_ARROW));
+        KBD.setPause(keyIsDown(80));
+        KBD.setFire(keyIsDown(32));
+        KBD.setK(keyIsDown(75))
+
+
+
+
+
+
+        GM.update();
+
+        GM.draw();
+
+        /*
+        textSize(10);
+        fill(255, 0, 0);
+        textAlign(LEFT);
+        text("Framerate: " + getFrameRate(), 5, 190);*/
+    }
+}
+
+function mouseClicked() {
+  clciked = true;
 }
