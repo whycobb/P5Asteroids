@@ -89,3 +89,9 @@ function draw() {
 function mouseClicked() {
   clciked = true;
 }
+
+function touchStarted() {
+  if (getAudioContext().state !== 'running') {
+    getAudioContext().resume();
+  }
+}
