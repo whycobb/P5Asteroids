@@ -51,7 +51,7 @@ function setup() {
 
 function draw() {
     
-    if (clicked) {
+    //if (clicked) {
         if (!mySound.isPlaying()) {
             mySound.play();
         }
@@ -83,11 +83,11 @@ function draw() {
         fill(255, 0, 0);
         textAlign(LEFT);
         text("Framerate: " + getFrameRate(), 5, 190);*/
-    }
+    //}
 }
 
 function mouseClicked() {
-  clicked = true;
+  //clicked = true;
 }
 
 function touchStarted() {
