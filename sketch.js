@@ -87,7 +87,7 @@ function draw() {
 }
 
 function mouseClicked() {
-  clciked = true;
+  clicked = true;
 }
 
 function touchStarted() {
