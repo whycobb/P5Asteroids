@@ -27,7 +27,7 @@ function Shot(x_, y_, theta_, intensity_, se_) {
     this.s = this.se.getIntensity();
     this.s = this.se.getIntensity();
     
-    this.shape = new ArbitraryShape(x_, y_, width/500 * Math.pow(this.s, 2.3) / 8084, theta_, this.se.getHue(), this.s, this.v, 100, 0, 0, 0, 0, 0);
+    this.shape = new ArbitraryShape(x_, y_, width/500 * Math.pow(this.s, 2) / 2500, theta_, this.se.getHue(), this.s, this.v, 100, 0, 0, 0, 0, 0);
     
     this.shape.setColor(this.se.getHue(), this.se.getIntensity(), this.se.getIntensity(), 255, this.se.getHue(), this.se.getIntensity(), this.se.getIntensity(), 255, width/300);
     
